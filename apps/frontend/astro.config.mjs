@@ -11,7 +11,9 @@ export default defineConfig({
     port: 3500,
   },
   integrations: [sitemap()],
-
+  experimental: {
+    assets: true,
+  },
   vite: {
     css: {
       devSourcemap: true,

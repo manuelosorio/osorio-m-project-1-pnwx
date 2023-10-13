@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import './nav.sass';
+import logo from '@images/logo.svg';
 ---
 
 <nav class="nav">
@@ -11,8 +13,12 @@ import './nav.sass';
   <div class="nav__group nav__group--left">
     <div class="nav__logo">
       <a href="/">
-        <!--<img src="/assets/images/logo.png" alt="logo" />-->
-        PNWX
+        <Image
+          src={logo}
+          alt="Pacific Northwest Logo"
+          width="260"
+          height="70"
+        />
       </a>
     </div>
     <label for="nav-toggle" class="visibility-flex visibility-none--lg">
