@@ -1,0 +1,22 @@
+---
+import './nav.sass';
+const response = await fetch('https://randomuser.me/api/');
+const data = await response.json();
+const randomUser = data.results[0];
+---
+
+<nav class="nav">
+  <div class="nav__logo">
+    <a href="/">
+      <!--<img src="/assets/images/logo.png" alt="logo" />-->
+      PNWX
+    </a>
+  </div>
+  <ul class="nav__links">
+    <li class="nav__link"><a href="/">Home</a></li>
+    <li><a href="#">Equipment</a></li>
+    <li><a href="#">Accessories</a></li>
+    <li><a href="#">Supplies</a></li>
+    <li><a href="#">Login</a></li>
+  </ul>
+</nav>

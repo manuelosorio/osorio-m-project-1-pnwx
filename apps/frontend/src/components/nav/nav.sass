@@ -1,0 +1,27 @@
+@use "../../styles/variables"
+.nav
+  background: variables.$background--dark
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  padding: 1rem
+  width: 100%
+  &__logo
+    color: variables.$primary--100
+    font-size: 1.5rem
+    font-weight: 700
+    text-decoration: none
+    &:hover
+      color: variables.$primary--200
+  &__links
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    width: 50%
+  &__link
+    color: variables.$primary--100
+    font-size: 1rem
+    font-weight: 700
+    text-decoration: none
+    &:hover
+      color: variables.$primary--200
