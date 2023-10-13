@@ -76,7 +76,7 @@ fontsRouter.get('/', cors(), (req, res) => {
   }
 
   let cssContent = '';
-
+  const useSwap = req.query.display === 'swap';
   for (const family of parsedFamilies) {
     console.log(family);
     for (const variant of family.variants) {
@@ -86,6 +86,7 @@ fontsRouter.get('/', cors(), (req, res) => {
   font-family: "${family.name}";
   src: url(${fontPath}) format('woff');
   font-weight: ${variant.weight};
+  ${useSwap ? 'font-display: swap;' : ''}
   font-style: ${variant.style === 'ital' ? 'italic' : 'normal'};
 }`;
     }
