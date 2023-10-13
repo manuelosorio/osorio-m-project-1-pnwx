@@ -1,22 +1,30 @@
 ---
 import './nav.sass';
-const response = await fetch('https://randomuser.me/api/');
-const data = await response.json();
-const randomUser = data.results[0];
 ---
 
 <nav class="nav">
-  <div class="nav__logo">
-    <a href="/">
-      <!--<img src="/assets/images/logo.png" alt="logo" />-->
-      PNWX
-    </a>
+  <input
+    type="checkbox"
+    id="nav-toggle"
+    class="nav__checkbox visibility-none"
+  />
+  <div class="nav__group nav__group--left">
+    <div class="nav__logo">
+      <a href="/">
+        <!--<img src="/assets/images/logo.png" alt="logo" />-->
+        PNWX
+      </a>
+    </div>
+    <label for="nav-toggle" class="visibility-flex visibility-none--lg">
+      Menu
+      <span class="nav__hamburger"></span>
+    </label>
   </div>
-  <ul class="nav__links">
+  <ul class="nav__group nav__group--right">
     <li class="nav__link"><a href="/">Home</a></li>
-    <li><a href="#">Equipment</a></li>
-    <li><a href="#">Accessories</a></li>
-    <li><a href="#">Supplies</a></li>
-    <li><a href="#">Login</a></li>
+    <li class="nav__link"><a href="#">Equipment</a></li>
+    <li class="nav__link"><a href="#">Accessories</a></li>
+    <li class="nav__link"><a href="#">Supplies</a></li>
+    <li class="nav__link"><a href="#">Login</a></li>
   </ul>
 </nav>

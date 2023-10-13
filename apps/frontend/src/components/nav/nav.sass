@@ -1,11 +1,16 @@
 @use "../../styles/variables"
+@use "@styles/utilities"
 .nav
   background: variables.$background--dark
   display: flex
-  flex-direction: row
-  justify-content: space-between
-  padding: 1rem
-  width: 100%
+  justify-content: space-evenly
+  padding: 1rem 1.25rem
+  flex-direction: column
+  align-items: center
+  +utilities.breakpoint-min('lg')
+    flex-direction: row
+    padding: 1rem 8.5rem
+
   &__logo
     color: variables.$primary--100
     font-size: 1.5rem
@@ -13,15 +18,67 @@
     text-decoration: none
     &:hover
       color: variables.$primary--200
-  &__links
+  &__group
     display: flex
-    flex-direction: row
-    justify-content: space-between
-    width: 50%
+    width: 100%
+    &--left
+      flex-direction: row
+      justify-content: space-between
+      align-items: center
+      padding: 0 2rem
+      +utilities.breakpoint-min('lg')
+        padding: 0
+        flex-basis: 15%
+    &--right
+      height: 0
+      overflow: hidden
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      transition: height 500ms ease-in-out
+      +utilities.breakpoint-min('lg')
+        height: fit-content
+        flex-direction: row
+        justify-content: flex-end
+        transition: none
   &__link
     color: variables.$primary--100
     font-size: 1rem
     font-weight: 700
+    margin: 0 2rem
     text-decoration: none
     &:hover
       color: variables.$primary--200
+.nav label
+  color: variables.$white
+  opacity: .85
+  &:hover
+    opacity: 1
+  .nav
+    &__hamburger
+      display: inline-block
+      height: 24px
+      width: 24px
+      transition: 200ms ease-in-out
+      cursor: pointer
+      --icon-image: url("https://cdn-manuelosorio.cyclic.app/api/icons/menu?color=%23fefefe&size=24&stroke_width=2")
+      background-image: var(--icon-image)
+      &:hover
+        opacity: 1
++utilities.breakpoint-max('lg')
+  .nav__checkbox[type="checkbox"]:checked
+    ~ .nav__group--right
+      height: 10rem
+    ~ div
+      label
+        .nav
+          &__hamburger
+            transform: rotate(180deg)
+            --icon-image: url("https://cdn-manuelosorio.cyclic.app/api/icons/x?color=%23fefefe&size=24&stroke_width=2")
+          &__links
+            height: 30rem
+            li
+              top: 0
+              @for $i from 1 through 8
+                &:nth-child(#{$i})
+                  transition-delay: #{$i * 75}ms
