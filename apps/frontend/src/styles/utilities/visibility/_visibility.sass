@@ -1,0 +1,22 @@
+@use "../../variables/index"
+@use "../breakpoints/breakpoints" as bp
+@use "display" as *
+
+@each $property in $display
+  .visibility-#{ $property }
+    display: #{ $property }
+    +bp.breakpoint-min("xs")
+      &--xs
+        display: #{ $property }
+    +bp.breakpoint-min("sm")
+      &--sm
+        display: #{ $property }
+    +bp.breakpoint-min("md")
+      &--md
+        display: #{ $property }
+    +bp.breakpoint-min("lg")
+      &--lg
+        display: #{ $property }
+    +bp.breakpoint-min("xl")
+      &--xl
+        display: #{ $property }
