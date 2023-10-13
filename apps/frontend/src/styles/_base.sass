@@ -1,0 +1,27 @@
+@use "utilities"
+@use "variables"
+\:root
+  /* Color Tokens */
+  +utilities.create-property("primary--100", variables.$blue--300)
+  +utilities.create-property("primary--200", variables.$blue--400)
+  +utilities.create-property("primary--300", variables.$blue--500)
+  +utilities.create-property("secondary--100", variables.$blue--100)
+  +utilities.create-property("secondary--200", variables.$blue--200)
+  +utilities.create-property("tertiary--100", variables.$green--100)
+  +utilities.create-property("tertiary--200", variables.$green--200)
+  +utilities.create-property("tertiary--300", variables.$green--300)
+  +utilities.create-property("background--light", variables.$white)
+  +utilities.create-property("background--dark", variables.$blue--500)
+*
+  box-sizing: border-box
+  &:before, &:after
+    box-sizing: border-box
+html
+  font-size: 100%
+body
+  background: variables.$background--light
+  color: variables.$primary--300
+  margin: 0
+
+h2
+  color: variables.$primary--300

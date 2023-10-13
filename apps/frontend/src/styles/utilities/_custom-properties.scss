@@ -1,0 +1,19 @@
+@use "sass:map";
+
+$custom-properties: ();
+
+@mixin init-property($name, $value) {
+  $custom-properties: map.merge($custom-properties, ( $name: $value ));
+}
+
+@mixin create-property($name, $value) {
+  --#{$name}: #{$value}
+}
+
+@mixin create-root() {
+  :root {
+    @each $name, $value in $custom-properties {
+      @include create-property($name, $value);
+    }
+  }
+}
