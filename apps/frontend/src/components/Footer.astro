@@ -4,7 +4,7 @@ import logo from '@images/logo.svg';
 ---
 
 <footer class="footer">
-  <div class="footer__wrapper">
+  <div class="footer__wrapper footer__wrapper--row">
     <ul class="footer__group">
       <li class="footer__section">
         <strong class="footer__title">Company</strong>
@@ -47,8 +47,8 @@ import logo from '@images/logo.svg';
     </ul>
   </div>
   <hr />
-  <div class="footer__bottom">
-    <div class="footer__bottom__left">
+  <div class="footer__wrapper">
+    <div class="footer__group" style="width: 100%; flex-wrap: wrap">
       <div class="footer__logo logo">
         <Image
           src={logo}
@@ -57,40 +57,43 @@ import logo from '@images/logo.svg';
           height="auto"
         />
       </div>
-      <div class="footer__bottom__right visibility--flex">
-        <ul class="footer__social">
-          <li class="footer__social__item">
-            <a href="#" class="footer__social__link">
-              <Image
-                src="https://cdn-manuelosorio.cyclic.app/api/icons/linkedin?color=%230A2239&size=24&stroke_width=2"
-                alt="Pacific North West X-Ray - LinkedIn"
-                width="24"
-                height="24"
-              />
-            </a>
-          </li>
-          <li class="footer__social__item">
-            <a href="#" class="footer__social__link">
-              <Image
-                src="https://cdn-manuelosorio.cyclic.app/api/icons/facebook?color=%230A2239&size=24&stroke_width=2"
-                alt="Pacific North West X-Ray - Facebook"
-                width="24"
-                height="24"
-              />
-            </a>
-          </li>
-          <li class="footer__social__item">
-            <a href="#" class="footer__social__link">
-              <Image
-                src="https://cdn-manuelosorio.cyclic.app/api/icons/instagram?color=%230A2239&size=24&stroke_width=2"
-                alt="Pacific North West X-Ray - Instagram"
-                width="24"
-                height="24"
-              />
-            </a>
-          </li>
-        </ul>
-      </div>
+      <ul class="footer__section footer__policy">
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms Of Use</a></li>
+        <li><a href="#">Cookie Policy</a></li>
+      </ul>
+      <ul class="footer__section visibility--flex footer__social">
+        <li class="footer__social__item">
+          <a href="#" class="footer__social__link">
+            <Image
+              src="https://cdn-manuelosorio.cyclic.app/api/icons/linkedin?color=%230A2239&size=24&stroke_width=2"
+              alt="Pacific North West X-Ray - LinkedIn"
+              width="24"
+              height="24"
+            />
+          </a>
+        </li>
+        <li class="footer__social__item">
+          <a href="#" class="footer__social__link">
+            <Image
+              src="https://cdn-manuelosorio.cyclic.app/api/icons/facebook?color=%230A2239&size=24&stroke_width=2"
+              alt="Pacific North West X-Ray - Facebook"
+              width="24"
+              height="24"
+            />
+          </a>
+        </li>
+        <li class="footer__social__item">
+          <a href="#" class="footer__social__link">
+            <Image
+              src="https://cdn-manuelosorio.cyclic.app/api/icons/instagram?color=%230A2239&size=24&stroke_width=2"
+              alt="Pacific North West X-Ray - Instagram"
+              width="24"
+              height="24"
+            />
+          </a>
+        </li>
+      </ul>
     </div>
 
     <p class="footer__copyright">
@@ -106,16 +109,27 @@ import logo from '@images/logo.svg';
   .footer
     background: variables.$background--dark
     color: variables.$text--light
+    &__logo
+      padding: 0
+      margin: 0
+      height: 40px
+      display: block
+      img
+        height: 100%
+        width: auto
+      /*margin: 0 auto*/
+      /*padding: 1em 0*/
     &__wrapper
       display: flex
       flex-direction: column
-      width: 80%
+      width: 90%
       max-width: 800px
       margin: 0 auto
       padding: 1rem 0
       +utilities.breakpoint-min('md')
-        flex-direction: row
-        justify-content: space-between
+        &--row
+          flex-direction: row
+          justify-content: space-between
     &__group
       display: flex
       flex-direction: row
@@ -128,9 +142,32 @@ import logo from '@images/logo.svg';
       justify-content: center
       padding: 1em
       line-height: 1.5
+    &__policy
+      display: flex
+      flex-direction: row
+      justify-content: space-between
+      padding: 0
+      margin: 0
+      width: 100%
+      order: 3
+      align-items: center
+      +utilities.breakpoint-min('md')
+        width: 42%
+        order: initial
+      li
+        font-size: 0.8em
+        margin: 0 0.5em
+        +utilities.breakpoint-min('md')
+          font-size: 1em
+        a
+          width: fit-content
     &__social
+      display: flex
+      flex-direction: row
+      align-items: center
       &__item
         display: inline-flex
+        margin: 0 3%
         a
           display: inline-flex
           align-content: center
@@ -142,4 +179,8 @@ import logo from '@images/logo.svg';
           transition: opacity 0.2s ease-in-out
           &:hover
             background: variables.$tertiary--200
+    &__copyright
+      text-align: center
+      padding: 1em 0
+      font-size: 0.8em
 </style>
