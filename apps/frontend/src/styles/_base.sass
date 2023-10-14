@@ -1,6 +1,6 @@
 @use "utilities"
 @use "variables"
-@import url('https://api-pnwx.manuelosorio.me/fonts?family=franklin-gothic:normal,wght@300;normal,wght@400;normal,wght@700;ital,wght@300;ital,wght@400;ital,wght@700&family=baskerville:normal,wght@700;normal,wght@800;ital,wght@700;ital,wght@800&display=swap')
+
 \:root
   /* Color Tokens */
   +utilities.create-property("primary--100", variables.$blue--300)
@@ -13,6 +13,8 @@
   +utilities.create-property("tertiary--300", variables.$green--300)
   +utilities.create-property("background--light", variables.$white)
   +utilities.create-property("background--dark", variables.$primary--200)
+  +utilities.create-property("text--light", variables.$white)
+  +utilities.create-property("text--dark", variables.$primary--300)
 *
   box-sizing: border-box
   &:before, &:after
@@ -23,7 +25,12 @@ body
   background: variables.$background--light
   color: variables.$primary--300
   margin: 0
-  font: 400 1rem/1.5 "Franklin Gothic", serif
+  font: 400 1rem/1.5 "franklin-gothic", sans-serif
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+main
+  flex: 1 0 auto
 h2
   color: variables.$primary--300
 a

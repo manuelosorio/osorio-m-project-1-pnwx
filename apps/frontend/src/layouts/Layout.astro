@@ -1,6 +1,7 @@
 ---
 import '@styles/global.sass';
 import Nav from '@components/nav/Nav.astro';
+import Footer from '@components/Footer.astro';
 interface Props {
   title: string;
 }
@@ -11,6 +12,8 @@ const { title } = Astro.props;
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://cdn-manuelosorio.cyclic.app/" />
+    <link rel="preconnect" href="https://pnwx-api.manuelosorio.me" />
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
@@ -21,5 +24,6 @@ const { title } = Astro.props;
   <body>
     <Nav />
     <slot />
+    <Footer />
   </body>
 </html>

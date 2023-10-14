@@ -1,0 +1,145 @@
+---
+import { Image } from 'astro:assets';
+import logo from '@images/logo.svg';
+---
+
+<footer class="footer">
+  <div class="footer__wrapper">
+    <ul class="footer__group">
+      <li class="footer__section">
+        <strong class="footer__title">Company</strong>
+        <ul class="footer__nav">
+          <li class="footer__link"><a href="#">About Us</a></li>
+          <li class="footer__link"><a href="#">Careers</a></li>
+          <li class="footer__link"><a href="#">Help Desk</a></li>
+          <li class="footer__link"><a href="#">Locations</a></li>
+        </ul>
+      </li>
+      <li class="footer__section">
+        <strong class="footer__title">Products</strong>
+        <ul class="footer__nav">
+          <li class="footer__link"><a href="#">Equipment</a></li>
+          <li class="footer__link"><a href="#">Accessories</a></li>
+          <li class="footer__link"><a href="#">Supplies</a></li>
+          <li class="footer__link"><a href="#">Parts</a></li>
+        </ul>
+      </li>
+    </ul>
+    <ul class="footer__section">
+      <li>
+        <strong class="footer__title">Contact</strong>
+        <ul>
+          <li>
+            <a href="#">Connect to Our 24/7 Live Chat</a>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong class="footer__title">Phone Are Open</strong>
+      </li>
+      <li>Monday-Friday 8am - 5pm</li>
+      <li>
+        Toll-Free (US): <a href="tel:800-827-9729"
+          >800-827-XRAY (800-827-9729)</a
+        >
+      </li>
+      <li>P.O. Box 625 * Gresham, OR 97030 * U.S.A.</li>
+    </ul>
+  </div>
+  <hr />
+  <div class="footer__bottom">
+    <div class="footer__bottom__left">
+      <div class="footer__logo logo">
+        <Image
+          src={logo}
+          alt="Pacific North West X-Ray, Logo"
+          width="260"
+          height="auto"
+        />
+      </div>
+      <div class="footer__bottom__right visibility--flex">
+        <ul class="footer__social">
+          <li class="footer__social__item">
+            <a href="#" class="footer__social__link">
+              <Image
+                src="https://cdn-manuelosorio.cyclic.app/api/icons/linkedin?color=%230A2239&size=24&stroke_width=2"
+                alt="Pacific North West X-Ray - LinkedIn"
+                width="24"
+                height="24"
+              />
+            </a>
+          </li>
+          <li class="footer__social__item">
+            <a href="#" class="footer__social__link">
+              <Image
+                src="https://cdn-manuelosorio.cyclic.app/api/icons/facebook?color=%230A2239&size=24&stroke_width=2"
+                alt="Pacific North West X-Ray - Facebook"
+                width="24"
+                height="24"
+              />
+            </a>
+          </li>
+          <li class="footer__social__item">
+            <a href="#" class="footer__social__link">
+              <Image
+                src="https://cdn-manuelosorio.cyclic.app/api/icons/instagram?color=%230A2239&size=24&stroke_width=2"
+                alt="Pacific North West X-Ray - Instagram"
+                width="24"
+                height="24"
+              />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="footer__copyright">
+      &copy; 1997&ndash;<script type="text/javascript">
+        document.write(new Date().getFullYear());
+      </script> Pacific Northwest X-Ray, Inc. All Rights Reserved.
+    </p>
+  </div>
+</footer>
+<style lang="Sass">
+  @use "../styles/variables"
+  @use "../styles/utilities"
+  .footer
+    background: variables.$background--dark
+    color: variables.$text--light
+    &__wrapper
+      display: flex
+      flex-direction: column
+      width: 80%
+      max-width: 800px
+      margin: 0 auto
+      padding: 1rem 0
+      +utilities.breakpoint-min('md')
+        flex-direction: row
+        justify-content: space-between
+    &__group
+      display: flex
+      flex-direction: row
+      justify-content: space-between
+      +utilities.breakpoint-min('md')
+        width: 42%
+    &__section
+      display: flex
+      flex-direction: column
+      justify-content: center
+      padding: 1em
+      line-height: 1.5
+    &__social
+      &__item
+        display: inline-flex
+        a
+          display: inline-flex
+          align-content: center
+          justify-content: center
+          background: variables.$tertiary--100
+          border-radius: 5px
+          padding: 0.25em 0.5em
+          opacity: 1
+          transition: opacity 0.2s ease-in-out
+          &:hover
+            background: variables.$tertiary--200
+</style>

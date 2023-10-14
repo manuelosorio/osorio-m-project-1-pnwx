@@ -2,6 +2,9 @@
 import { Image } from 'astro:assets';
 import './nav.sass';
 import logo from '@images/logo.svg';
+type nav = {
+  search?: boolean;
+};
 ---
 
 <nav class="nav">
@@ -11,16 +14,14 @@ import logo from '@images/logo.svg';
     class="nav__checkbox visibility-none"
   />
   <div class="nav__group nav__group--left">
-    <div class="nav__logo">
-      <a href="/">
-        <Image
-          src={logo}
-          alt="Pacific Northwest Logo"
-          width="260"
-          height="70"
-        />
-      </a>
-    </div>
+    <a href="/" class="nav__logo logo">
+      <Image
+        src={logo}
+        alt="Pacific Northwest Logo"
+        width="260"
+        height="auto"
+      />
+    </a>
     <label for="nav-toggle" class="visibility-flex visibility-none--lg">
       Menu
       <span class="nav__hamburger"></span>
