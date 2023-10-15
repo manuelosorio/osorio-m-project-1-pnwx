@@ -9,6 +9,7 @@
   },
   "private": true,
   "dependencies": {
+    "astro-compress": "^2.0.15",
     "autoprefixer": "10.4.16",
     "axios": "^1.0.0",
     "cors": "^2.8.5",

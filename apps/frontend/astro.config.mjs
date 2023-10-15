@@ -1,8 +1,8 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
-import path from "path";
-
-
+import path from 'path';
+import autoprefixer from 'autoprefixer';
+import Compress from 'astro-compress';
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,21 +10,34 @@ export default defineConfig({
   server: {
     port: 3500,
   },
-  integrations: [sitemap()],
+  integrations: [
+    sitemap(),
+    Compress({
+      Map: true,
+      HTML: false,
+      CSS: false,
+      JS: false,
+      SVG: false,
+    }),
+  ],
   experimental: {
     assets: true,
+    viewTransitions: true
   },
   vite: {
-    css: {
-      devSourcemap: true,
-      // postcss: {
-      //   plugins: [require('autoprefixer')],
-      // }
+      css: {
+        devSourcemap: true,
+        postcss: {
+          map: {
+            inline: true,
+          },
+          plugins: [autoprefixer()],
+        },
+      },
+      resolve: {
+        alias: {
+          '@styles/*': path.resolve('./src/styles/**/*'),
+        },
+      },
     },
-    resolve: {
-      alias: {
-        '@styles/*':  path.resolve('./src/styles/**/*'),
-      }
-    },
-  }
 });
