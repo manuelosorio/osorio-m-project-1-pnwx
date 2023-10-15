@@ -9,6 +9,7 @@
   },
   "private": true,
   "dependencies": {
+    "@astrojs/react": "^3.0.3",
     "astro-compress": "^2.0.15",
     "autoprefixer": "10.4.16",
     "axios": "^1.0.0",

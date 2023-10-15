@@ -7,12 +7,16 @@ $breakpoints: ("xs", "sm", "md", "lg")
   max-width: 98%
   flex-basis: 98%
   padding: unquote(variables.$gutter + "%")
+@for $i from 1 through variables.$columns
+  .l-order-#{$i}
+    order: $i
 @each $size in $breakpoints
   +utilities.breakpoint-min($size)
     @for $i from 1 through variables.$columns
-      .l-order--#{$size}
-        &-#{$i}
-          order: $i
+      .l-order
+        &--#{$size}
+          &-#{$i}
+            order: $i
       .l-offset--#{$size}
         &__top
           &-#{$i}
@@ -23,7 +27,7 @@ $breakpoints: ("xs", "sm", "md", "lg")
         &__left
           &-#{$i}
             margin-left: unquote((variables.$grid-width * $i) - variables.$gutter + (variables.$gutter-space * $i) + '%')
-      .l-column--#{$size}
-        &-#{$i}
+      .l-column__#{$size}
+        &--#{$i}
           max-width: unquote((variables.$grid-width * $i) - variables.$gutter + (variables.$gutter-space * $i) + '%')
           flex-basis: unquote((variables.$grid-width * $i) - variables.$gutter + (variables.$gutter-space * $i) + '%')

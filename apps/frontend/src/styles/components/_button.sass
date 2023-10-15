@@ -1,0 +1,28 @@
+@use "../variables"
+@use "../utilities"
+
+.button
+  background: variables.$primary--100
+  border: none
+  border-radius: 0.25rem
+  color: variables.$white
+  cursor: pointer
+  display: inline-flex
+  align-items: center
+  font-size: 1rem
+  font-weight: 700
+  margin: 0.25rem 0
+  padding: 0.5em 1em
+  justify-content: center
+  text-align: center
+  text-decoration: none
+  transition: background variables.$t-ease-in-out
+  width: 100%
+  img
+    margin-right: 1rem
+  &:hover
+    background: variables.$primary--200
+  +utilities.breakpoint-min('lg')
+    width: initial
+    img
+      margin-right: 0.5rem

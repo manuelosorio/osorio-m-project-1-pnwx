@@ -3,6 +3,7 @@ import sitemap from '@astrojs/sitemap';
 import path from 'path';
 import autoprefixer from 'autoprefixer';
 import Compress from 'astro-compress';
+import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,6 +12,7 @@ export default defineConfig({
     port: 3500,
   },
   integrations: [
+    react(),
     sitemap(),
     Compress({
       Map: true,

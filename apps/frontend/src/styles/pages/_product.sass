@@ -1,0 +1,88 @@
+@use "../../styles/variables"
+@use "../../styles/utilities"
+.product
+  display: flex
+  flex-direction: column
+  gap: 1rem
+  background: #fff
+  margin: 20px
+  +utilities.breakpoint-min('md')
+    display: grid
+    grid-template-columns: repeat(5, auto)
+    grid-template-rows: repeat(5, auto)
+  &__images
+    order: 0
+    padding: 20px
+    border-right: 1px solid #eee
+    overflow-y: hidden
+    --product__images-height: 300px
+    height: var(--product__images-height)
+
+    img
+      width: 100%
+      height: auto
+    +utilities.breakpoint-min('md')
+      --product__images-height: 350px
+      grid:
+        row-start: 1
+        column-start: 1
+        row-end: 4
+        column-end: 3
+    +utilities.breakpoint-min('lg')
+      --product__images-height: 500px
+
+  &__heading
+    padding: 0 1rem
+    h1
+      margin: 0
+    .brand
+      display: block
+      color: variables.$tertiary--300
+      margin-bottom: 10px
+    .price
+      display: block
+      color: variables.$text--dark
+      font:
+        size: variables.$f-size-md
+        weight: variables.$f-weight-bold
+    +utilities.breakpoint-min('md')
+      grid:
+        row-start: 1
+        column-start: 3
+        row-end: 2
+        column-end: 6
+  &__details
+    order: 3
+    padding: 0 1rem
+    .description
+      margin-top: 0.75rem
+    +utilities.breakpoint-min('md')
+      grid:
+        row-start: 2
+        column-start: 3
+        row-end: 6
+        column-end: 6
+  &__purchase
+    order: 2
+    +utilities.breakpoint-min('md')
+      grid:
+        row-start: 4
+        column-start: 1
+        row-end: 6
+        column-end: 3
+.sizing-table
+  h2
+    line-height: 1
+    margin: 2rem 0 0.5rem
+  table
+    border-collapse: collapse
+  tr
+    &:nth-child(odd)
+      background: #eee
+  th, td
+    padding: 1.25rem
+    border: 1px solid #ccc
+  td
+    text-align: center
+    &:first-child
+      font-weight: variables.$f-weight-bold

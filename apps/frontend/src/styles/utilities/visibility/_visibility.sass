@@ -5,6 +5,8 @@
 @each $property in $display
   .visibility-#{ $property }
     display: #{ $property }
+@each $property in $display
+  .visibility-#{ $property }
     +bp.breakpoint-min("xs")
       &--xs
         display: #{ $property }

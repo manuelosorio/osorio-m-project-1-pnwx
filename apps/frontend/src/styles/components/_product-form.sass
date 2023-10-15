@@ -1,0 +1,90 @@
+@use "../../styles/variables"
+@use "../../styles/utilities"
+.product-form
+  font-family: Arial, sans-serif
+  border: 1px solid #ddd
+  padding: 20px
+  border-radius: 5px
+  margin: auto
+  width: 100%
+  .form-label
+    display: block
+    margin: 10px 0
+
+  .radio-group
+    display: flex
+    gap: 10px
+
+  .form-button
+    background-color: #007BFF
+    color: #fff
+    padding: 10px 15px
+    border: none
+    border-radius: 5px
+    cursor: pointer
+    transition: background-color 0.3s
+    &:hover
+      background-color: #0056b3
+
+  .form-select, .form-input
+    width: 100%
+    padding: 8px
+    border-radius: 5px
+    border: 1px solid #ccc
+
+.quantity
+  display: flex
+  padding: 1rem
+  font-size: variables.$f-size-md
+  align-items: center
+  &__control
+    margin: 0 1rem
+    cursor: pointer
+    transition: color, background-color variables.$t-ease-in-out
+    padding: 0.5rem 1rem
+    border-radius: 0.25rem
+    background: variables.$tertiary--300
+    color: variables.$text--light
+    &:hover
+      background: variables.$primary--200
+  &__display
+    margin: 0 1rem
+    font-weight: variables.$f-weight-bold
+    background: variables.$white
+    border: 1px solid #ccc
+    padding: 0.5rem 1rem
+
+.dropdown
+  &__wrapper
+    position: relative
+    width: 90%
+    font-family: Arial, sans-serif
+    border: 1px solid #ddd
+    border-radius: 5px
+    cursor: pointer
+    background-color: #fff
+    &.open
+      .dropdown__options
+        display: block
+      .placeholder .arrow
+        transform: rotate(180deg)
+    .placeholder
+      padding: 10px 15px
+      border-bottom: 1px solid #ddd
+
+      .arrow
+        float: right
+  &__options
+    position: absolute
+    top: 100%
+    left: 0
+    right: 0
+    z-index: 1000
+    display: none
+    background-color: #fff
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1)
+  &__option
+    padding: 10px 15px
+    border-bottom: 1px solid #ddd
+    cursor: pointer
+

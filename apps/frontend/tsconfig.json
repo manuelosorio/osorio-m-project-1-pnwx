@@ -34,7 +34,9 @@
       "@layouts/*": ["src/layouts/*"],
       "@pages/*": ["src/pages/*"],
       "@images/*": ["src/assets/images/*"],
-    }
+      "@lib/*": ["src/lib/*"],
+    },
+    "jsx": "react"
   },
   "include": ["src"],
 

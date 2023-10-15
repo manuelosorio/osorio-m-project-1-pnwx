@@ -1,0 +1,112 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '@layouts/Layout.astro';
+import productImage from '@images/infab/lead-vest-skirt-703-infab.jpg';
+import '@styles/pages/_product.sass';
+import ProductForm from '@lib/ProductForm.jsx';
+---
+
+<Layout title="Pacific North West X-Ray">
+  <main>
+    <div class="product">
+      <div class="product__images">
+        <Image
+          src={productImage}
+          alt="Lead Vest Skirt"
+          width="500"
+          height="657"
+        />
+      </div>
+      <div class="product__heading">
+        <h1>Full Overlap Lumbar Support Vest and Skirt</h1>
+        <a class="brand" href="#">INFAB</a>
+        <span class="price">$1,250.00</span>
+      </div>
+      <div class="product__details">
+        <!-- Gender, Quantity, and Add to Cart sections can be added here -->
+        <div class="description">
+          <p>
+            INFAB'S "Revolution" series lead apparel, available in the newest
+            inner core material for maximum scatter absorbed dose protection;
+            KiArmor. Revolution Vest and Skirts seamlessly blend the most
+            sought-after and effective apron features and benefits to create a
+            truly groundbreaking product and are completely redesigned to offer
+            the best X-Ray protection apron on the market.
+          </p>
+          <p>
+            Revolution Vest and Skirts seamlessly blend the most sought-after
+            and effective apron features and benefits to create a truly
+            groundbreaking product and are completely redesigned to offer the
+            best X-Ray protection apron on the market. Each front vest panel is
+            0.50mm. Comfortably close your vest with assurance you're getting
+            that full 0.50mm protection and 1.0mm at overlap. Back panel always
+            made in 0.25mm.
+          </p>
+        </div>
+
+        <div class="sizing-table">
+          <h2>Male Sizing Chart</h2>
+          <table>
+            <tr>
+              <td></td>
+              <td>S</td>
+              <td>M</td>
+              <td>L</td>
+              <td>XL</td>
+              <td>XXL</td>
+            </tr>
+            <tr>
+              <td>Chest</td>
+              <td>34&ndash;37</td>
+              <td>38&ndash;41</td>
+              <td>42&ndash;45</td>
+              <td>46&ndash;49</td>
+              <td>50&ndash;52</td>
+            </tr>
+            <tr>
+              <td>Waist</td>
+              <td>28&ndash;31</td>
+              <td>32&ndash;35</td>
+              <td>36&ndash;39</td>
+              <td>40&ndash;43</td>
+              <td>44&ndash;46</td>
+            </tr>
+          </table>
+        </div>
+        <div class="sizing-table">
+          <h2>Female Sizing Chart</h2>
+          <table>
+            <tr>
+              <td></td>
+              <td>S</td>
+              <td>M</td>
+              <td>L</td>
+              <td>XL</td>
+              <td>XXL</td>
+            </tr>
+            <tr>
+              <td>Bust</td>
+              <td>33&ndash;36</td>
+              <td>37&ndash;39</td>
+              <td>40&ndash;42</td>
+              <td>43&ndash;45</td>
+              <td>46&ndash;48</td>
+            </tr>
+            <tr>
+              <td>Waist</td>
+              <td>38&ndash;30</td>
+              <td>31&ndash;33</td>
+              <td>34&ndash;36</td>
+              <td>37&ndash;39</td>
+              <td>40&ndash;42</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="product__purchase">
+        <ProductForm client:load />
+      </div>
+    </div>
+  </main>
+  <style lang="sass"></style>
+</Layout>
