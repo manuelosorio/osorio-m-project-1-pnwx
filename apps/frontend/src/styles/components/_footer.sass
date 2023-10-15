@@ -1,0 +1,80 @@
+@use "../variables"
+@use "../utilities"
+.footer
+  background: variables.$background--dark
+  color: variables.$text--light
+  &__logo
+    padding: 0
+    margin: 0
+    height: 40px
+    display: block
+    img
+      height: 100%
+      width: auto
+  &__wrapper
+    display: flex
+    flex-direction: column
+    width: 90%
+    max-width: 800px
+    margin: 0 auto
+    padding: 1rem 0
+    +utilities.breakpoint-min('md')
+      &--row
+        flex-direction: row
+        justify-content: space-between
+  &__group
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    +utilities.breakpoint-min('md')
+      width: 42%
+  &__section
+    display: flex
+    flex-direction: column
+    justify-content: center
+    padding: 1em
+    line-height: 1.5
+  &__policy
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    padding: 0
+    margin: 0
+    width: 100%
+    order: 3
+    align-items: center
+    +utilities.breakpoint-min('md')
+      width: 42%
+      order: initial
+    li
+      font-size: 0.8em
+      margin: 0 0.5em
+      +utilities.breakpoint-min('md')
+        font-size: 1em
+      a
+        width: fit-content
+  &__social
+    display: flex
+    flex-direction: row
+    align-items: center
+    &__item
+      display: inline-flex
+      margin: 0 3%
+      a
+        display: inline-flex
+        align-content: center
+        justify-content: center
+        background: variables.$tertiary--100
+        border-radius: 5px
+        padding: 0.25em 0.5em
+        opacity: 1
+        transition: opacity 0.2s ease-in-out
+        &:hover
+          background: variables.$tertiary--200
+  &__copyright
+    text-align: center
+    padding: 1em 0
+    font-size: 0.8em
+  &__rule
+    border-color: variables.$secondary--100
+    max-width: variables.$breakpoint-medium
