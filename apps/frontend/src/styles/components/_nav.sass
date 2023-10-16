@@ -44,12 +44,18 @@
   &__link
     color: variables.$primary--100
     font-size: 1rem
-    font-weight: 700
+    font-weight: variables.$f-weight-bold
     margin: 0.25rem 1rem
-    padding: 0.25em 0.75em
     text-decoration: none
     width: 100%
+    display: flex
     text-align: center
+    align-items: center
+    position: relative
+    a
+      padding: 0.5em 0.75em 0.25em
+      width: 100%
+
     &:hover
       background: variables.$secondary--100
       color: variables.$primary--200
@@ -59,6 +65,7 @@
 .nav label
   color: variables.$white
   opacity: .85
+  cursor: pointer
   &:hover
     opacity: 1
   .nav
@@ -67,6 +74,7 @@
       height: 24px
       width: 24px
       transition: 200ms ease-in-out
+      margin-left: 1rem
       cursor: pointer
       --icon-image: url("https://cdn-manuelosorio.cyclic.app/api/icons/menu?color=%23fefefe&size=24&stroke_width=2")
       background-image: var(--icon-image)
@@ -75,17 +83,10 @@
 +utilities.breakpoint-max('lg')
   .nav__checkbox[type="checkbox"]:checked
     ~ .nav__group--right
-      height: 12rem
+      height: 13rem
     ~ div
       label
         .nav
           &__hamburger
             transform: rotate(180deg)
             --icon-image: url("https://cdn-manuelosorio.cyclic.app/api/icons/x?color=%23fefefe&size=24&stroke_width=2")
-          &__links
-            height: 50rem
-            li
-              top: 0
-              @for $i from 1 through 8
-                &:nth-child(#{$i})
-                  transition-delay: #{$i * 75}ms
