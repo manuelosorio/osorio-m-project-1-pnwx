@@ -6,12 +6,13 @@ interface Props {
   price: number;
   image: any;
   href: string;
+  className?: string;
 }
-const { href, image, name, company, price } = Astro.props;
+const { href, image, name, company, price, className } = Astro.props;
 ---
 
-<article class="product-card">
-  <div class="product-card__img">
+<article class={className}>
+  <div class="product-card__image">
     <Image src={image} alt={name} height="328" width="250" />
   </div>
   <div class="product-card__content">

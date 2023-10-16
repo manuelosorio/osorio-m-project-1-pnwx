@@ -1,12 +1,14 @@
 ---
 import { Image } from 'astro:assets';
+import '@styles/pages/_product.sass';
 import Layout from '@layouts/Layout.astro';
 import productImage from '@images/infab/lead-vest-skirt-703-infab.jpg';
-import '@styles/pages/_product.sass';
 import ProductForm from '@lib/ProductForm.jsx';
+import Searchbar from '@lib/Searchbar';
 ---
 
 <Layout title="Pacific North West X-Ray">
+  <Searchbar />
   <main>
     <div class="product">
       <div class="product__images">

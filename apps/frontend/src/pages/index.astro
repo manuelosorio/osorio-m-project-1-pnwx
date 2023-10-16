@@ -5,42 +5,41 @@ import VestImage from '@images/infab/lead-vest-skirt-703-infab.jpg';
 import forearmShield from '@images/infab/forearm-shields-top-web-scaled.jpg';
 import scatterGuard from '@images/infab/scatter-armor-disposable-lead-free-thinking-cap-dc-25-infab-scaled.jpg';
 import hero from '@images/hero.jpg';
+import Searchbar from '@lib/Searchbar';
 ---
 
 <Layout title="Pacific North West X-Ray">
   <header class="hero">
+    <!--<Searchbar />-->
     <h1>Your Trusted Marketplace for X-Ray & Laboratory Equipment</h1>
   </header>
   <main>
     <section class="l-container l-container__flex--row product__wrapper">
       <h2 class="l-column--12">Why Choose Us</h2>
-      <div class="product l-column--12 l-column__sm--6 l-column__lg--4">
-        <ProductCard
-          name="Full Overlap Lumbar Support Vest and Skirt"
-          company="Infab"
-          href="/product"
-          image={VestImage}
-          price="1200.00"
-        />
-      </div>
-      <div class="product l-column--12 l-column__sm--6 l-column__lg--4">
-        <ProductCard
-          name="Forearm Shield Protection"
-          company="Infab"
-          href="#"
-          image={forearmShield}
-          price="500.00"
-        />
-      </div>
-      <div class="product l-column--12 l-column__sm--6 l-column__lg--4">
-        <ProductCard
-          name="Scatter Armor Disposable Lead Free Thinking Cap"
-          company="Infab"
-          href="#"
-          image={scatterGuard}
-          price="150.00"
-        />
-      </div>
+      <ProductCard
+        name="Full Overlap Lumbar Support Vest and Skirt"
+        company="Infab"
+        href="/product"
+        image={VestImage}
+        price="1200.00"
+        className="product product-card l-column--12 l-column__sm--6 l-column__lg--4"
+      />
+      <ProductCard
+        name="Forearm Shield Protection"
+        company="Infab"
+        href="#"
+        image={forearmShield}
+        price="500.00"
+        className="product product-card l-column--12 l-column__sm--6 l-column__lg--4"
+      />
+      <ProductCard
+        name="Scatter Armor Disposable Lead Free Thinking Cap"
+        company="Infab"
+        href="#"
+        image={scatterGuard}
+        price="150.00"
+        className="product product-card l-column--12 l-column__sm--6 l-column__lg--4"
+      />
       <div class="l-column--12 cta">
         <a href="#" class="button button--primary">View All Products</a>
       </div>
