@@ -1,36 +1,6 @@
 @use "utilities"
 @use "variables"
 
-\:root
-  /* Color Tokens */
-  +utilities.create-property("primary--100", variables.$blue--300)
-  +utilities.create-property("primary--200", variables.$blue--400)
-  +utilities.create-property("primary--300", variables.$blue--500)
-  +utilities.create-property("secondary--100", variables.$blue--100)
-  +utilities.create-property("secondary--200", variables.$blue--200)
-  +utilities.create-property("tertiary--100", variables.$green--100)
-  +utilities.create-property("tertiary--200", variables.$green--200)
-  +utilities.create-property("tertiary--300", variables.$green--300)
-  +utilities.create-property("background--light", variables.$white)
-  +utilities.create-property("background--dark", variables.$primary--200)
-  +utilities.create-property("text--light", variables.$white)
-  +utilities.create-property("text--dark", variables.$primary--300)
-
-  /* Font Tokens */
-  +utilities.create-property("font-weight-light", 300)
-  +utilities.create-property("font-weight-regular", 400)
-  +utilities.create-property("font-weight-medium", 500)
-  +utilities.create-property("font-weight-bold", 700)
-
-  +utilities.create-property("font-size-xxs", 0.875rem)
-  +utilities.create-property("font-size-xs", 1.125rem)
-  +utilities.create-property("font-size-sm", 1.25rem)
-  +utilities.create-property("font-size-md", 1.5625rem)
-  +utilities.create-property("font-size-lg", 2rem)
-  +utilities.create-property("font-size-xl", 2.25rem)
-  +utilities.create-property("font-size-xxl", 2.625rem)
-
-
 *
   box-sizing: border-box
   &:before, &:after
@@ -57,6 +27,9 @@ h1
     size: variables.$f-size-xxl
     weight: variables.$f-weight-bold
 h2
+  font:
+    size: variables.$f-size-xl
+    weight: variables.$f-weight-bold
   color: variables.$primary--300
 a
   color: variables.$white

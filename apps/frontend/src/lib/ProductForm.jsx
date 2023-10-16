@@ -1,11 +1,10 @@
 import { useState, useRef, useEffect } from 'react';
 
-export default function ProductForm() {
+export default function ProductForm(props) {
   const [gender, setGender] = useState('');
-  const [size, setSize] = useState('');
+  const [size, setSize] = useState('Choose a size');
   const [quantity, setQuantity] = useState(1);
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState('Choose a size');
   const wrapperRef = useRef(null);
 
   const handleOutsideClick = (event) => {
@@ -64,7 +63,7 @@ export default function ProductForm() {
         onClick={() => setIsOpen(!isOpen)}
       >
         <div className="placeholder">
-          {selectedOption}{' '}
+          {size}{' '}
           <span className="arrow">
             <img
               src="https://cdn-manuelosorio.cyclic.app/api/icons/chevron-up?color=%230A2239&#38;size=24&#38;stroke_width=2"
@@ -79,7 +78,7 @@ export default function ProductForm() {
                 key={idx}
                 className="dropdown__option"
                 onClick={() => {
-                  setSelectedOption(option);
+                  setSize(option);
                   setIsOpen(false);
                 }}
               >
@@ -107,7 +106,6 @@ export default function ProductForm() {
           +
         </div>
       </div>
-
       {/* Add to Cart Button */}
       <button type="submit" className="button">
         <img

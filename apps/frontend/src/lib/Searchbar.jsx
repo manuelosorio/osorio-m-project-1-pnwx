@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function SearchBar() {
+function SearchBar(props) {
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearch = () => {
@@ -12,7 +12,7 @@ function SearchBar() {
   };
 
   return (
-    <div className="search-bar">
+    <div className={props.className}>
       <input
         type="text"
         placeholder="Search..."

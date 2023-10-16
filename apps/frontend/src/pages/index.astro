@@ -6,16 +6,19 @@ import forearmShield from '@images/infab/forearm-shields-top-web-scaled.jpg';
 import scatterGuard from '@images/infab/scatter-armor-disposable-lead-free-thinking-cap-dc-25-infab-scaled.jpg';
 import hero from '@images/hero.jpg';
 import Searchbar from '@lib/Searchbar';
+import Card from '@components/Card.astro';
 ---
 
 <Layout title="Pacific North West X-Ray">
   <header class="hero">
-    <!--<Searchbar />-->
-    <h1>Your Trusted Marketplace for X-Ray & Laboratory Equipment</h1>
+    <div>
+      <h1>Your Trusted Marketplace for X-Ray & Laboratory Equipment</h1>
+      <Searchbar className="search-bar search-bar--outline" client:load />
+    </div>
   </header>
   <main>
     <section class="l-container l-container__flex--row product__wrapper">
-      <h2 class="l-column--12">Why Choose Us</h2>
+      <h2 class="heading__section l-column--12">Our Products</h2>
       <ProductCard
         name="Full Overlap Lumbar Support Vest and Skirt"
         company="Infab"
@@ -43,6 +46,24 @@ import Searchbar from '@lib/Searchbar';
       <div class="l-column--12 cta">
         <a href="#" class="button button--primary">View All Products</a>
       </div>
+    </section>
+    <section class="l-container l-container__flex--row">
+      <h2 class="heading__section l-column--12">Why Choose Us</h2>
+      <Card
+        title="Curated Products:"
+        body="Hand picked products that uphold quality and safety standards in the medical equipment industry."
+        className="product product-card l-column--12 l-column__md--4"
+      />
+      <Card
+        title="Trusted Partners:"
+        body="Our products come from reputable 3rd party providers, ensuring reliability and innovation"
+        className="product product-card l-column--12 l-column__md--4"
+      />
+      <Card
+        title="Customer-centeric:"
+        body="Your ease and satisfaction drive everything we do, through expert 24/7 customer support."
+        className="product product-card l-column--12 l-column__md--4"
+      />
     </section>
   </main>
 </Layout>

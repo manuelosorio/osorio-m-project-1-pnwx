@@ -1,3 +1,4 @@
+@use "../variables"
 h2
   margin-bottom: 0
   padding: 0
@@ -13,3 +14,15 @@ h2
   padding: 12rem 4rem
   color: var(--text--light)
   text-align: center
+  div
+    margin: auto
+    width: 70%
+    max-width: variables.$breakpoint-medium
+    h1
+      font:
+        size: variables.$f-size-xxl
+        weight: variables.$f-weight-bold
+      color: var(--text--light)
+      max-width: 28ch
+      margin: 1rem auto
+      line-height: 1.2

@@ -1,20 +1,48 @@
+@use "../variables"
 .search-bar
   display: flex
   flex-direction: row
-  align-items: center
+  align-items: stretch
   justify-content: center
   margin: 1rem auto
   width: 80%
-  //max-width: 120px
+  max-width: variables.$breakpoint-medium
   border: 1px solid #ccc
   border-radius: 4px
   box-shadow: 0 0 4px 0 rgba(0,0,0,0.2)
-  input
-    padding: 1.5rem
   input, button
-
     display: flex
     border: 0
     height: 24px
     background: transparent
+  input
+    padding: 1.5rem
+    width: 80%
+    flex-grow: 1
+  button
+    transition: variables.$t-ease-in-out
+    cursor: pointer
+    height: auto
+    align-items: center
+    padding-left: 1rem
+    padding-right: 1rem
+    &:hover
+      background: variables.$secondary--100
+  &--outline
+    background: transparent
+    border: 1px solid variables.$background--light
+    color: variables.$text--light
+    input
+      color: variables.$text--light
+      //SELECT PLACEHOLDER
+      &::placeholder
+        color: variables.$text--light
+    button
+      img
+        filter: grayscale(1) brightness(20)
+        transition: variables.$t-ease-in-out
+      &:hover
+        background: variables.$background--light
+        img
+          filter: grayscale(1) brightness(0)
 
