@@ -7,6 +7,9 @@ import scatterGuard from '@images/infab/scatter-armor-disposable-lead-free-think
 import hero from '@images/hero.jpg';
 import Searchbar from '@lib/Searchbar';
 import Card from '@components/Card.astro';
+import curated from '@images/curated.png';
+import partners from '@images/partners.png';
+import customer from '@images/customer.png';
 ---
 
 <Layout title="Pacific North West X-Ray">
@@ -43,26 +46,41 @@ import Card from '@components/Card.astro';
         price="150.00"
         className="product product-card l-column--12 l-column__sm--6 l-column__lg--4"
       />
-      <div class="l-column--12 cta">
-        <a href="#" class="button button--primary">View All Products</a>
+      <div class="l-column--12 cta l-offset--md__left-6">
+        <a href="#" class="button button--secondary">View All Products</a>
       </div>
     </section>
-    <section class="l-container l-container__flex--row">
+    <section
+      class="l-container l-container__flex--row"
+      style="margin: 0 auto 2rem"
+    >
       <h2 class="heading__section l-column--12">Why Choose Us</h2>
       <Card
         title="Curated Products:"
         body="Hand picked products that uphold quality and safety standards in the medical equipment industry."
         className="product product-card l-column--12 l-column__md--4"
+        iconPath={curated}
+        iconWidth="75"
+        iconHeight="75"
+        alt="Curated Products icon"
       />
       <Card
         title="Trusted Partners:"
         body="Our products come from reputable 3rd party providers, ensuring reliability and innovation"
         className="product product-card l-column--12 l-column__md--4"
+        iconPath={partners}
+        iconWidth="75"
+        iconHeight="75"
+        alt="Trusted Partners icon"
       />
       <Card
         title="Customer-centeric:"
         body="Your ease and satisfaction drive everything we do, through expert 24/7 customer support."
         className="product product-card l-column--12 l-column__md--4"
+        iconPath={customer}
+        iconWidth="75"
+        iconHeight="75"
+        alt="Customer-centric icon"
       />
     </section>
   </main>

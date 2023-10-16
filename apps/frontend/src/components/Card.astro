@@ -1,23 +1,25 @@
 ---
-import Image from 'astro:assets';
+import { Image } from 'astro:assets';
 interface Props {
   title: string;
   body: string;
-  icon?: {
-    path: string;
-    width?: number;
-    height?: number;
-    aspectRatio?: number;
-  };
+  iconPath?: string;
+  iconWidth?: number;
+  iconHeight?: number;
+  alt?: string;
+  iconAspectRatio?: number;
   className?: string;
 }
-const { title, body, icon, className } = Astro.props;
+const { title, body, className, iconPath, iconHeight, iconWidth, alt } =
+  Astro.props;
 ---
 
 <div class=`card ${className}`>
   <div class="card__header">
-    <h3 class="card__header__title">{title}</h3>
-    <div class="card__header__icon"></div>
+    <div class="card__header__icon">
+      <Image src={iconPath} width={iconWidth} alt={alt} />
+    </div>
+    <strong class="card__header__title">{title}</strong>
   </div>
   <div class="card__body">{body}</div>
 </div>
