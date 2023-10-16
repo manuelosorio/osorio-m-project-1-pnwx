@@ -4,9 +4,13 @@ import ProductCard from '@components/ProductCard.astro';
 import VestImage from '@images/infab/lead-vest-skirt-703-infab.jpg';
 import forearmShield from '@images/infab/forearm-shields-top-web-scaled.jpg';
 import scatterGuard from '@images/infab/scatter-armor-disposable-lead-free-thinking-cap-dc-25-infab-scaled.jpg';
+import hero from '@images/hero.jpg';
 ---
 
 <Layout title="Pacific North West X-Ray">
+  <header class="hero">
+    <h1>Your Trusted Marketplace for X-Ray & Laboratory Equipment</h1>
+  </header>
   <main>
     <section class="l-container l-container__flex--row">
       <h2 class="l-column--12">Why Choose Us</h2>
@@ -14,7 +18,6 @@ import scatterGuard from '@images/infab/scatter-armor-disposable-lead-free-think
         <ProductCard
           name="Full Overlap Lumbar Support Vest and Skirt"
           company="Infab"
-          description="We are the best because we are the best."
           href="/product"
           image={VestImage}
           price="1200.00"
@@ -22,22 +25,20 @@ import scatterGuard from '@images/infab/scatter-armor-disposable-lead-free-think
       </div>
       <div class="product l-column--12 l-column__sm--6 l-column__lg--4">
         <ProductCard
-          name="Full Overlap Lumbar Support Vest and Skirt"
+          name="Forearm Shield Protection"
           company="Infab"
-          description="We are the best because we are the best."
-          href="/product"
+          href="#"
           image={forearmShield}
-          price="1200.00"
+          price="500.00"
         />
       </div>
       <div class="product l-column--12 l-column__sm--6 l-column__lg--4">
         <ProductCard
-          name="Full Overlap Lumbar Support Vest and Skirt"
+          name="Scatter Armor Disposable Lead Free Thinking Cap"
           company="Infab"
-          description="We are the best because we are the best."
-          href="/product"
+          href="#"
           image={scatterGuard}
-          price="1200.00"
+          price="150.00"
         />
       </div>
       <div class="l-column--12 cta">
@@ -56,5 +57,19 @@ import scatterGuard from '@images/infab/scatter-armor-disposable-lead-free-think
   .cta {
     align-items: center;
     margin: auto;
+  }
+  .hero {
+    background: linear-gradient(
+        0deg,
+        rgba(10, 34, 57, 0.65) 0%,
+        rgba(10, 34, 57, 0.65) 100%
+      ),
+      url('../assets/images/hero.jpg'),
+      lightgray 0 -846.579px / 100% 301.255% no-repeat;
+    background-blend-mode: hard-light, normal;
+    background-size: cover;
+    min-height: 150px;
+    padding: 10rem 4rem;
+    color: var(--text--light);
   }
 </style>
