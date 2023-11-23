@@ -8,12 +8,11 @@
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{e2eProjectRoot}"],
       "options": {
-        "jestConfig": "apps/backend-api-e2e/jest.config.ts",
-        "passWithNoTests": true
+        "jestConfig": "apps/backend-api-e2e/jest.config.ts"
       }
     },
     "lint": {
-      "executor": "@nx/linter:eslint",
+      "executor": "@nx/eslint:lint",
       "outputs": ["{options.outputFile}"],
       "options": {
         "lintFilePatterns": ["apps/backend-api-e2e/**/*.{js,ts}"]
