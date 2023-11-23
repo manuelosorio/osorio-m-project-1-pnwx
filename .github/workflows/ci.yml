@@ -1,12 +1,7 @@
 name: CI
 
-on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
+on: [workflow_call]
+
 env:
   NX_CLOUD_DISTRIBUTED_EXECUTION: true # this enables DTE
   NX_CLOUD_DISTRIBUTED_EXECUTION_AGENT_COUNT: 3 # expected number of agents
