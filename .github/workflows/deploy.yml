@@ -24,6 +24,7 @@ jobs:
         USERNAME: ${{ secrets.USERNAME }}
       run: |
         # Save private key to a file
+        echo "$PRIVATE_KEY" > private_key.pem
         chmod 600 private_key.pem
         # SSH into the remote machine and run the commands
         ssh -o StrictHostKeyChecking=no -i private_key.pem $USERNAME@$HOST "cd pnwx && git pull && git reset --hard && pnpm install && git reset --hard && pnpm run build &&  exit"
