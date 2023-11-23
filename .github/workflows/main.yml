@@ -1,29 +1,28 @@
-name: Deploy on master change
-
-on:
-  push:
-    branches:
-      - master
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-      
-    - name: Install SSH client
-      run: sudo apt-get install -y ssh-client
-
-    - name: SSH and run commands
-      env:
-        PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        HOST: ${{ secrets.HOST }}
-        USERNAME: ${{ secrets.USERNAME }}
-      run: |
-        # Save private key to a file
-        echo "$PRIVATE_KEY" > private_key.pem
-        chmod 600 private_key.pem
-        
-        # SSH into the remote machine and run the commands
-        ssh -o StrictHostKeyChecking=no -i private_key.pem $USERNAME@$HOST "cd pnwx && git pull && git reset --hard && pnpm install && git reset --hard && pnpm run build &&  exit"
+#name: Deploy on master change
+#
+#on:
+#  push:
+#    branches:
+#      - master
+#
+#jobs:
+#  deploy:
+#    runs-on: ubuntu-latest
+#    steps:
+#    - name: Checkout code
+#      uses: actions/checkout@v2
+#
+#    - name: Install SSH client
+#      run: sudo apt-get install -y ssh-client
+#
+#    - name: SSH and run commands
+#      env:
+#        PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+#        HOST: ${{ secrets.HOST }}
+#        USERNAME: ${{ secrets.USERNAME }}
+#      run: |
+#        # Save private key to a file
+#        chmod 600 private_key.pem
+#
+#        # SSH into the remote machine and run the commands
+#        ssh -o StrictHostKeyChecking=no -i private_key.pem $USERNAME@$HOST "cd pnwx && git pull && git reset --hard && pnpm install && git reset --hard && pnpm run build &&  exit"
