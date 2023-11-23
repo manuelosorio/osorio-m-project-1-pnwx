@@ -19,7 +19,7 @@ jobs:
   #     - name: Set up environment variables
   #       run: |
   #         echo "NX_CLOUD_ACCESS_TOKEN=${{ secrets.NX_CLOUD_ACCESS_TOKEN }}" >> $GITHUB_ENV
-  main:
+  master:
     name: Nx Cloud - Main Job
     uses: nrwl/ci/.github/workflows/nx-cloud-main.yml@v0.13.0
     secrets:
