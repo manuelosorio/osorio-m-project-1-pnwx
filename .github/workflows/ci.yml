@@ -26,6 +26,7 @@ jobs:
         NX_CLOUD_ACCESS_TOKEN: ${{ secrets.NX_CLOUD_ACCESS_TOKEN }}
     with:
       main-branch-name: master
+      pnpm-version: 8.7.0
       number-of-agents: 3
       init-commands: |
         pnpm exec nx-cloud start-ci-run --stop-agents-after="build" --agent-count=3
