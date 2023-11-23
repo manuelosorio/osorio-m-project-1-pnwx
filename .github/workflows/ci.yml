@@ -1,6 +1,9 @@
 name: CI
 
-on: [workflow_call]
+on:
+  push:
+    branches:
+      -master
 
 env:
   NX_CLOUD_DISTRIBUTED_EXECUTION: true # this enables DTE
