@@ -46,7 +46,7 @@ on:
       main-branch-name:
         required: false
         type: string
-        default: masterSS
+        default: master
       runs-on:
         required: false
         type: string
