@@ -1,4 +1,7 @@
+
 # OsorioMProject1Pnwx
+[![CI](https://github.com/manuelosorio/osorio-m-project-1-pnwx/actions/workflows/ci.yml/badge.svg)](https://github.com/manuelosorio/osorio-m-project-1-pnwx/actions/workflows/ci.yml)
+[![CD](https://github.com/manuelosorio/osorio-m-project-1-pnwx/actions/workflows/deploy.yml/badge.svg)](https://github.com/manuelosorio/osorio-m-project-1-pnwx/actions/workflows/deploy.yml)
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
