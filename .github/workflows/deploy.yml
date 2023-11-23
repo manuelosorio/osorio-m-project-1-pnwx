@@ -1,4 +1,4 @@
-name: Deploy on master change
+name: Deploy
 
 on:
   push:

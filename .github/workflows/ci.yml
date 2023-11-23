@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      -master
+      - master
 
 env:
   NX_CLOUD_DISTRIBUTED_EXECUTION: true # this enables DTE
