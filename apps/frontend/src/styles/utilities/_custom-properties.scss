@@ -1,13 +1,18 @@
-@use "sass:map";
+@use 'sass:map';
 
 $custom-properties: ();
 
 @mixin init-property($name, $value) {
-  $custom-properties: map.merge($custom-properties, ( $name: $value ));
+  $custom-properties: map.merge(
+    $custom-properties,
+    (
+      $name: $value,
+    )
+  );
 }
 
 @mixin create-property($name, $value) {
-  --#{$name}: #{$value}
+  --#{$name}: #{$value};
 }
 
 @mixin create-root() {

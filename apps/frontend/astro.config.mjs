@@ -24,22 +24,22 @@ export default defineConfig({
   ],
   experimental: {
     assets: true,
-    viewTransitions: true
+    viewTransitions: true,
   },
   vite: {
-      css: {
-        devSourcemap: true,
-        postcss: {
-          map: {
-            inline: true,
-          },
-          plugins: [autoprefixer()],
+    css: {
+      devSourcemap: true,
+      postcss: {
+        map: {
+          inline: true,
         },
-      },
-      resolve: {
-        alias: {
-          '@styles/*': path.resolve('./src/styles/**/*'),
-        },
+        plugins: [autoprefixer()],
       },
     },
+    resolve: {
+      alias: {
+        '@styles/*': path.resolve('./src/styles/**/*'),
+      },
+    },
+  },
 });
