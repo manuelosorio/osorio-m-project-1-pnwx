@@ -36,7 +36,6 @@ describe('API tests with consistent session', () => {
 
   it('should get a cart', async () => {
     const res = await axiosInstance.get(`/api/v1/cart`);
-    console.log(res);
     expect(res.status).toBe(200);
     expect(res.data).toEqual({ items: [{ productId: 1, quantity: 1 }] });
   });
