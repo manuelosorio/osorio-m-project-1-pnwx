@@ -1,11 +1,11 @@
-import { getGreeting } from '../support/app.po';
+import { getHeading } from '../support/app.po';
 
 describe('frontend', () => {
   beforeEach(() => cy.visit('/'));
 
-  it('should display welcome message', () => {
-    cy.login('my-email@something.com', 'myPassword');
-
-    getGreeting().contains('Welcome to Astro');
+  it('should load', () => {
+    getHeading().contains(
+      'Your Trusted Marketplace for X-Ray & Laboratory Equipment'
+    );
   });
 });
