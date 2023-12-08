@@ -33,19 +33,13 @@ export default function ProductForm(props) {
       size: size,
       quantity: quantity,
     };
-    const response = fetch('https://api-pnwx.manuelosorio.me/api/v1/cart', {
+    const urlRoute = 'https://api-pnwx.manuelosorio.me/api/v1/cart';
+    const response = fetch(urlRoute, {
       headers: {
-        'Content-Type': 'application/x-form-urlencoded',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
       method: 'POST',
-    });
-    response.then((res) => {
-      if (res.status === 200) {
-        alert('Item added to cart');
-      } else {
-        alert('Error adding item to cart');
-      }
     });
   };
 
