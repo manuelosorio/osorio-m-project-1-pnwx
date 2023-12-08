@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+  pull_request:
 
 env:
   NX_CLOUD_DISTRIBUTED_EXECUTION: true # this enables DTE
@@ -27,7 +28,7 @@ jobs:
     with:
       main-branch-name: master
       pnpm-version: 8.7.0
-      number-of-agents: 4
+      number-of-agents: 3
       init-commands: |
         pnpm exec nx-cloud start-ci-run --stop-agents-after="build" --agent-count=3
       parallel-commands: |
