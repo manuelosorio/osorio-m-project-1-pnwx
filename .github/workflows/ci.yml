@@ -34,6 +34,7 @@ jobs:
       parallel-commands: |
         pnpm exec nx-cloud record -- pnpm exec nx format:write
         pnpm exec nx-cloud record -- pnpm exec nx format:check
+        pnpm exec nx-cloud record pnpm dev
       parallel-commands-on-agents: |
         pnpm exec nx affected --target=lint --parallel=3
         pnpm exec nx affected --target=test --parallel=3 --ci --code-coverage
