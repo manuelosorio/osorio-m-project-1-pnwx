@@ -25,9 +25,12 @@
         }
       },
       "configurations": {
-        "development": {},
+        "development": {
+          "sourcemap": true
+        },
         "production": {
           "generateLockfile": true,
+          "generatePackageJson": true,
           "esbuildOptions": {
             "sourcemap": false,
             "outExtension": {
