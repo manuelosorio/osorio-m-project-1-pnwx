@@ -22,11 +22,31 @@ export default function ProductForm(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log({
+      productId: props.productId,
       gender,
       size,
       quantity,
     });
-    // Handle adding the product to the cart here
+    const data = {
+      productId: props.productId,
+      gender: gender,
+      size: size,
+      quantity: quantity,
+    };
+    const response = fetch('https://api-pnwx.manuelosorio.me/api/v1/cart', {
+      headers: {
+        'Content-Type': 'application/x-form-urlencoded',
+      },
+      body: JSON.stringify(data),
+      method: 'POST',
+    });
+    response.then((res) => {
+      if (res.status === 200) {
+        alert('Item added to cart');
+      } else {
+        alert('Error adding item to cart');
+      }
+    });
   };
 
   return (
