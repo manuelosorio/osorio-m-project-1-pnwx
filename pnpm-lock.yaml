@@ -47,12 +47,21 @@ dependencies:
   module-alias:
     specifier: ^2.2.3
     version: 2.2.3
+  react:
+    specifier: ^18.0.0
+    version: 18.2.0
+  react-dom:
+    specifier: ^18.0.0
+    version: 18.2.0(react@18.2.0)
   sass:
     specifier: 1.69.1
     version: 1.69.1
   tsconfig-paths:
     specifier: ^4.2.0
     version: 4.2.0
+  tsconfig-paths-jest:
+    specifier: ^0.0.1
+    version: 0.0.1
   tslib:
     specifier: ^2.3.0
     version: 2.6.2
@@ -112,6 +121,12 @@ devDependencies:
   '@types/node':
     specifier: ~18.7.1
     version: 18.7.1
+  '@types/react':
+    specifier: ^18.0.21
+    version: 18.2.28
+  '@types/react-dom':
+    specifier: ^18.0.6
+    version: 18.2.13
   '@typescript-eslint/eslint-plugin':
     specifier: 6.12.0
     version: 6.12.0(@typescript-eslint/parser@6.12.0)(eslint@8.46.0)(typescript@5.2.2)
@@ -4619,7 +4634,6 @@ packages:
       {
         integrity: sha512-kMpQpfZKSCBqltAJwskgePRaYRFukDkm1oItcAbC3gNELR20XIBcN9VRgg4+m8DKsTfkWeA4m4Imp4DDuWy7FQ==,
       }
-    dev: false
 
   /@types/qs@6.9.8:
     resolution:
@@ -4642,7 +4656,6 @@ packages:
       }
     dependencies:
       '@types/react': 18.2.28
-    dev: false
 
   /@types/react@18.2.28:
     resolution:
@@ -4653,7 +4666,6 @@ packages:
       '@types/prop-types': 15.7.8
       '@types/scheduler': 0.16.4
       csstype: 3.1.2
-    dev: false
 
   /@types/resolve@1.20.2:
     resolution:
@@ -4685,7 +4697,6 @@ packages:
       {
         integrity: sha512-2L9ifAGl7wmXwP4v3pN4p2FLhD0O1qsJpvKmNin5VA8+UvNVb447UDaAEV6UdrkA+m/Xs58U1RFps44x6TFsVQ==,
       }
-    dev: false
 
   /@types/semver@7.5.1:
     resolution:
@@ -6611,7 +6622,6 @@ packages:
       {
         integrity: sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==,
       }
-    dev: false
 
   /cypress@13.0.0:
     resolution:
@@ -13226,6 +13236,13 @@ packages:
       typescript: 5.2.2
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
+
+  /tsconfig-paths-jest@0.0.1:
+    resolution:
+      {
+        integrity: sha512-YKhUKqbteklNppC2NqL7dv1cWF8eEobgHVD5kjF1y9Q4ocqpBiaDlYslQ9eMhtbqIPRrA68RIEXqknEjlxdwxw==,
+      }
+    dev: false
 
   /tsconfig-paths@4.2.0:
     resolution:

@@ -14,7 +14,7 @@ export class CartService {
       if (cart) {
         resolve(cart);
       } else {
-        reject('Cart not found');
+        reject('Empty Cart');
       }
     });
   };
@@ -30,7 +30,6 @@ export class CartService {
         reject('Missing required fields');
         return;
       }
-
       const cart = CartService.carts.find((cart) => cart.session === session);
       if (cart) {
         const item = cart.items.find((item) => item.productId === productId);

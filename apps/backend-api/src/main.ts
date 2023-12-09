@@ -10,7 +10,13 @@ const host = process.env.HOST ?? 'localhost';
 const port = process.env.PORT ? Number(process.env.PORT) : 3000;
 const app = express();
 
-app.use('/static', cors(), express.static('public'));
+app.use(
+  cors({
+    origin: process.env.CLIENT_URL,
+    credentials: true,
+  })
+);
+app.use('/static', express.static('public'));
 app.use('/fonts', fontsRouter);
 const sess: SessionOptions = {
   secret: process.env.SESSION_SECRET,
@@ -25,19 +31,16 @@ const sess: SessionOptions = {
     secure: false,
   },
 };
-
 app.use(session(sess));
 
 app.use(
   '/api/v:version',
-  cors(),
   express.json(),
   express.urlencoded({ extended: true }),
   apiRouter
 );
 app.use(
   '/api',
-  cors(),
   express.json(),
   express.urlencoded({ extended: true }),
   apiRouter
