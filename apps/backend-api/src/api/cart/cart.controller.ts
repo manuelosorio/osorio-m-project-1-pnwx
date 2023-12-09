@@ -10,9 +10,14 @@ export class CartController {
       .then((cart) => {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         const { session, ...cartData } = cart;
-        res.send(cartData);
+        return res.send(cartData);
       })
-      .catch((error) => res.status(404).send(error));
+      .catch((error) => {
+        if (error === 'Empty Cart') {
+          return res.send({ items: [] });
+        }
+        return res.status(404).send({ message: error });
+      });
   };
   addToCart = (req: Request, res: Response): void => {
     const data = {
