@@ -1,0 +1,13 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Cart from '@lib/cart';
+import SearchBar from '@lib/Searchbar';
+---
+
+<Layout>
+  <SearchBar client:load className="search-bar" />
+  <main>
+    <h1>Cart</h1>
+    <Cart client:load />
+  </main>
+</Layout>
