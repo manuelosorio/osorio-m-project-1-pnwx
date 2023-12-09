@@ -13,7 +13,7 @@ export default defineConfig({
   },
   integrations: [
     react({
-      include: ['./src/lib/*']
+      include: ['./src/lib/*'],
     }),
     sitemap(),
     Compress({
