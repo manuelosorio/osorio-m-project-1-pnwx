@@ -1,0 +1,27 @@
+@use "../variables"
+.loading
+  display: flex
+  justify-content: center
+  margin: 1rem 0 2rem
+  &__circle
+    width: 1rem
+    height: 1rem
+    margin: 1rem
+    display: flex
+    flex-wrap: wrap
+    border-radius: 50%
+    background: variables.$primary--300
+    &:nth-child(1)
+      animation: loading 3s infinite 200ms
+    &:nth-child(2)
+      animation: loading 3s infinite 400ms
+    &:nth-child(3)
+      animation: loading 3s infinite 600ms
+
+@keyframes loading
+  0%, 50%, 100%
+    transform: scale(0) translateY(0px)
+  25%, 75%
+    transform: scale(1.1) translateY(-20px)
+  40%, 90%
+    transform: scale(1) translateY(20px)
