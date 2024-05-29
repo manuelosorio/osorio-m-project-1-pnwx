@@ -6,7 +6,6 @@ describe('CartService', () => {
 
   beforeEach(() => {
     cartService = new CartService();
-    CartService.carts = []; // Reset the carts array before each test
   });
   const createMockSession = (sessionId: string): Session => {
     return {
@@ -25,25 +24,8 @@ describe('CartService', () => {
       touch: jest.fn(),
     };
   };
-  describe('get method', () => {
-    it('should resolve with a cart if found', async () => {
-      const mockSession = createMockSession('session1');
-      CartService.carts.push({ session: 'session1', items: [] });
-
-      await expect(cartService.get(mockSession)).resolves.toEqual({
-        session: 'session1',
-        items: [],
-      });
-    });
-
-    it('should reject if cart not found', async () => {
-      const mockSession = createMockSession('nonexistent');
-      await expect(cartService.get(mockSession)).rejects.toBe('Empty Cart');
-    });
-  });
-
   describe('add method', () => {
-    const mockedSession = createMockSession('session2');
+    const mockedSession = createMockSession('session1');
     it('should reject if missing required fields', async () => {
       const data = {
         session: mockedSession.id,
@@ -57,13 +39,31 @@ describe('CartService', () => {
 
     it('should resolve with "Cart created" for new cart', async () => {
       const data = { session: mockedSession.id, productId: 1, quantity: 1 };
-      await expect(cartService.add(data)).resolves.toBe('Cart created');
+      await expect(
+        cartService.add(data).then((r) => {
+          return r.message;
+        })
+      ).resolves.toBe('Cart created');
     });
-
-    it('should resolve with "Added to cart" for existing cart', async () => {
+    it('should resolve with "Item added to cart" for existing cart', async () => {
       const data = { session: mockedSession.id, productId: 1, quantity: 1 };
       await cartService.add(data);
-      await expect(cartService.add(data)).resolves.toBe('Added to cart');
+      await expect(cartService.add(data).then((r) => r.message)).resolves.toBe(
+        'Item added to cart'
+      );
+    });
+  });
+  describe('get method', () => {
+    it('should resolve with cart containing items if found', async () => {
+      const mockSession = createMockSession('session1');
+      await expect(cartService.get(mockSession)).resolves.toEqual({
+        items: [{ productId: 1, quantity: 3 }],
+        session: 'session1',
+      });
+    });
+    it('should reject if cart not found', async () => {
+      const mockSession = createMockSession('nonexistent');
+      await expect(cartService.get(mockSession)).rejects.toBe('Empty Cart');
     });
   });
 });

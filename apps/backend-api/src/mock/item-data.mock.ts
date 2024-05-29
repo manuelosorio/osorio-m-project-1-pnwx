@@ -1,6 +1,6 @@
 import { ItemModel } from '@models/item.model';
 
-export const itemData: ItemModel[] = [
+export const ItemDataMock: ItemModel[] = [
   {
     id: 1,
     name: 'Full Overlap Lumbar Support Vest and Skirt',
