@@ -80,7 +80,7 @@ export default function ProductForm(props) {
           {size}{' '}
           <span className="arrow">
             <img
-              src="https://cdn-manuelosorio.cyclic.app/api/icons/chevron-up?color=%230A2239&#38;size=24&#38;stroke_width=2"
+              src="https://cdn.manuelosor.io/api/icons/chevron-up?color=%230A2239&#38;size=24&#38;stroke_width=2"
               alt="Chevorn Icon"
             />
           </span>
@@ -123,7 +123,7 @@ export default function ProductForm(props) {
       {/* Add to Cart Button */}
       <button type="submit" className="button">
         <img
-          src="https://cdn-manuelosorio.cyclic.app/api/icons/shopping-cart?color=%23efefef&#38;size=24&#38;stroke_width=2"
+          src="https://cdn.manuelosor.io/api/icons/shopping-cart?color=%23efefef&#38;size=24&#38;stroke_width=2"
           alt="Shopping Cart Icon"
         />
         Add to Cart
