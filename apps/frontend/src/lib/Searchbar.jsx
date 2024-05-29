@@ -21,7 +21,7 @@ function SearchBar(props) {
       />
       <button onClick={handleSearch}>
         <img
-          src="https://cdn-manuelosorio.cyclic.app/api/icons/search?color=%230A2239&size=24&stroke_width=2"
+          src="https://cdn.manuelosor.io/api/icons/search?color=%230A2239&size=24&stroke_width=2"
           alt="search icon"
         />
       </button>
