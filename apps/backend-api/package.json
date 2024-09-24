@@ -1,0 +1,7 @@
+{
+  "_moduleAliases": {
+    "@api": "apps/backend-api/src/api/",
+    "@models": "apps/backend-api/src/models/",
+    "@services": "apps/backend-api/src/services/"
+  }
+}

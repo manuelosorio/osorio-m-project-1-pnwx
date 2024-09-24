@@ -1,0 +1,30 @@
+.l-
+  &container
+    width: 90%
+    max-width: 1200px
+    margin: 0 auto
+    &__flex
+      display: flex
+      flex-direction: column
+      gap: 1.75rem
+      justify-content: center
+      &--row
+        @extend .l-container__flex
+        flex-direction: row
+        flex-wrap: wrap
+    &__grid
+      display: grid
+      grid-template-columns: repeat(12, 1fr)
+      gap: 0.75rem
+  &row
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    width: 100%
+    &--justify-left
+      @extend .l-row
+      justify-content: left
+    &--space-between
+      @extend .l-row
+      justify-content: space-between
+

@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "nx run-many -t dev -p frontend backend-api",
     "build": "nx run-many -t build -p frontend backend-api",
-    "postinstall": "node ./tools/scripts/patch-nx-cli.js"
+    "postinstall": "node ./tools/scripts/patch-nx-cli.js",
+    "test": "nx run-many -t test -p frontend backend-api"
   },
   "private": true,
   "dependencies": {
@@ -23,8 +24,11 @@
     "express": "~4.18.1",
     "express-session": "^1.17.3",
     "module-alias": "^2.2.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "sass": "1.69.1",
     "tsconfig-paths": "^4.2.0",
+    "tsconfig-paths-jest": "^0.0.1",
     "tslib": "^2.3.0",
     "vite-aliases": "^0.11.3"
   },
@@ -46,6 +50,8 @@
     "@types/express-session": "^1.17.10",
     "@types/jest": "^29.4.0",
     "@types/node": "~18.7.1",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "6.12.0",
     "@typescript-eslint/parser": "6.12.0",
     "astro": "^2.10.7",
@@ -72,5 +78,6 @@
     "@api": "dist/apps/backend-api/apps/backend-api/src/api/",
     "@models": "dist/apps/backend-api/apps/backend-api/src/models/",
     "@services": "dist/apps/backend-api/apps/backend-api/src/services/"
-  }
+  },
+  "packageManager": "pnpm@8.6.5+sha1.a074a371066567dcdeb19a1d1bd9a78cf3c9faa3"
 }

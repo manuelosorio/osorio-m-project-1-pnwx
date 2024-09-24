@@ -5,16 +5,21 @@ export class CartService {
   constructor() {
     console.log('CartService created');
   }
-  public static carts: Cart[] = [];
+  private static carts: Cart[] = [];
 
   get = (session: Session): Promise<Cart> => {
     return new Promise((resolve, reject) => {
       const cart =
         CartService.carts.find((cart) => cart.session === session.id) || null;
       if (cart) {
+        cart.items.map((item) => {
+          item.productId = Number(item.productId);
+          item.quantity = Number(item.quantity);
+          return item;
+        });
         resolve(cart);
       } else {
-        reject('Cart not found');
+        reject('Empty Cart');
       }
     });
   };
@@ -23,14 +28,16 @@ export class CartService {
     session: string;
     productId: number;
     quantity: number;
-  }): Promise<string> => {
+  }): Promise<{
+    cart: Cart;
+    message: string;
+  }> => {
     const { session, productId, quantity } = data;
     return new Promise((resolve, reject) => {
       if (!(session && productId && quantity)) {
         reject('Missing required fields');
         return;
       }
-
       const cart = CartService.carts.find((cart) => cart.session === session);
       if (cart) {
         const item = cart.items.find((item) => item.productId === productId);
@@ -39,10 +46,10 @@ export class CartService {
         } else {
           cart.items.push({ productId, quantity });
         }
-        resolve('Added to cart');
+        resolve({ cart, message: 'Item added to cart' });
       } else {
         CartService.carts.push({ session, items: [{ productId, quantity }] });
-        resolve('Cart created');
+        resolve({ cart, message: 'Cart created' });
       }
     });
   };

@@ -12,7 +12,9 @@ export default defineConfig({
     port: 3500,
   },
   integrations: [
-    react(),
+    react({
+      include: ['./src/lib/*'],
+    }),
     sitemap(),
     Compress({
       Map: true,

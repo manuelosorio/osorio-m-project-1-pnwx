@@ -2,7 +2,7 @@ name: Deploy
 
 on:
   workflow_run:
-    workflows: ['CI'] # Replace with the name of your CI workflow
+    workflows: ['CI']
     types:
       - completed
     branches:
@@ -26,4 +26,13 @@ jobs:
           echo "$PRIVATE_KEY" > private_key.pem
           chmod 600 private_key.pem
           # SSH into the remote machine and run the commands
-          ssh -o StrictHostKeyChecking=no -i private_key.pem $USERNAME@$HOST "cd pnwx && git pull && git reset --hard && pnpm install && git reset --hard && pnpm run build &&  exit"
+          ssh -o StrictHostKeyChecking=no -i private_key.pem $USERNAME@$HOST "
+            cd pnwx && \
+            git pull && \
+            git reset --hard && \
+            pnpm install --frozen-lockfile && \
+            pnpm run build \
+            exit
+          "
+          # Cleanup private key
+          rm -f private_key.pem

@@ -1,0 +1,22 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Cart from '@lib/cart';
+import SearchBar from '@lib/Searchbar';
+---
+
+<Layout>
+  <SearchBar client:load className="search-bar" />
+  <main
+    class="l-container l-column__xs--12 l-column__sm--10 l-column__md--8 l-column__lg--7"
+  >
+    <h1>Cart</h1>
+    <Cart client:load />
+  </main>
+</Layout>
+<style lang="sass">
+  @use '../styles/variables'
+  .product-card--cart-item
+    display: flex
+    justify-content: center !important
+    align-items: center !important
+</style>

@@ -1,13 +1,15 @@
-import { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
-export default function ProductForm(props) {
+export default function ProductForm(
+  props: HTMLInputElement & { productId: string }
+): React.JSX.Element {
   const [gender, setGender] = useState('');
   const [size, setSize] = useState('Choose a size');
   const [quantity, setQuantity] = useState(1);
   const [isOpen, setIsOpen] = useState(false);
   const wrapperRef = useRef(null);
 
-  const handleOutsideClick = (event) => {
+  const handleOutsideClick = (event: MouseEvent) => {
     if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
       setIsOpen(false);
     }
@@ -19,7 +21,7 @@ export default function ProductForm(props) {
       document.removeEventListener('mousedown', handleOutsideClick);
     };
   }, []);
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log({
       productId: props.productId,
@@ -33,11 +35,12 @@ export default function ProductForm(props) {
       size: size,
       quantity: quantity,
     };
-    const urlRoute = 'https://api-pnwx.manuelosorio.me/api/v1/cart';
+    const urlRoute = import.meta.env.PUBLIC_API_URL + '/cart';
     const response = fetch(urlRoute, {
       headers: {
         'Content-Type': 'application/json',
       },
+      credentials: 'include',
       body: JSON.stringify(data),
       method: 'POST',
     });

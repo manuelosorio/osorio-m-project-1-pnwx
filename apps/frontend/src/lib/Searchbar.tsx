@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { type HTMLProps, useState } from 'react';
 
-function SearchBar(props) {
+function SearchBar(props: HTMLProps<any>): React.JSX.Element {
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearch = () => {
